@@ -1,0 +1,21 @@
+# This is a description of the depth profile example figure
+# The figure should show:
+# 1. Original RGB image with ROI highlighted
+# 2. Depth map visualization (using plasma colormap)
+# 3. 1D free-space profile plot
+# 4. Visualization of steering angle recommendation
+
+# The figure should be arranged in a 2x2 grid:
+# [RGB Image with ROI] [Depth Map]
+# [1D Profile Plot]    [Steering Visualization]
+
+# The 1D profile plot should show:
+# - X-axis: Image column index
+# - Y-axis: Inverted cost (higher = more navigable)
+# - A vertical line indicating the selected steering direction
+# - A vertical line at the center of the image
+
+# The steering visualization should show:
+# - The original RGB image
+# - An overlay arrow indicating the recommended steering direction
+# - Text showing the computed steering angle in degrees

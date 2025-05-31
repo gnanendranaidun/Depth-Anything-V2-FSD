@@ -1,0 +1,46 @@
+digraph G {
+  rankdir=LR;
+  node [shape=box, style=filled, fillcolor=lightblue, fontname="Arial"];
+  
+  subgraph cluster_0 {
+    label="Input Processing";
+    color=lightgrey;
+    
+    input [label="Camera Input"];
+    roi [label="ROI Selection"];
+  }
+  
+  subgraph cluster_1 {
+    label="Depth Estimation";
+    color=lightgrey;
+    
+    depth_model [label="Depth-Anything-V2\nModel"];
+    depth_map [label="Depth Map"];
+  }
+  
+  subgraph cluster_2 {
+    label="Free-Space Analysis";
+    color=lightgrey;
+    
+    profile [label="1D Profile\nGeneration"];
+    inversion [label="Cost Inversion"];
+    safest [label="Safest Path\nIdentification"];
+  }
+  
+  subgraph cluster_3 {
+    label="Steering Calculation";
+    color=lightgrey;
+    
+    trajectory [label="Trajectory\nComputation"];
+    angle [label="Steering Angle\nCalculation"];
+  }
+  
+  input -> roi;
+  roi -> depth_model;
+  depth_model -> depth_map;
+  depth_map -> profile;
+  profile -> inversion;
+  inversion -> safest;
+  safest -> trajectory;
+  trajectory -> angle;
+}

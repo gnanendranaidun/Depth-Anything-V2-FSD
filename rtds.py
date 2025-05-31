@@ -152,7 +152,7 @@ class FinalSearcher:
         return x, y, metadata, id_val
 
 if __name__ == '__main__':
-    API_KEY = ''
+    API_KEY = 'AIzaSyBSy9nQlkPyd145jj019i3UuBAgkc0fjzk'
     searcher = FinalSearcher(api_key=API_KEY)
 
     # Example interrupt usage:
